@@ -1,0 +1,56 @@
+This is currently all vapor.
+
+The concept is a messaging client that, rather than being linear, is tree shaped.
+Messages all reference another message.
+This allows parallel conversation, where context is always maintained.
+
+In XMPP
+Basically, each message has an ID.
+Each message can have it's subject set to "RE: ID" to signify the message it is refering to.
+
+Also, there would be a couple of messages that can be sent.
+
+One would be "Close Node"
+Another would be "Open Node"
+
+A topic is a tree of messages. By default, leaves are the only ones marked as open.
+This message would mark a topic as closed, by closing all leaves.
+If a tree gets kind of complex, it could be useful to have a button that takes you to an open node.
+Probably one for the oldest and one for the newest.
+
+When a message is written, it can be marked as closed.
+Perhaps a prefix character in the subject.
+
+Messages without a recognizable subject are put into the main message stack.
+
+This should mean that people with another client should still be able to send you messages, and you should still be able to send them messages.
+It's just that all of their messages will be in one line, no matter how you branch them in your client.
+
+It is assumed that when a client posts a response to a node, the responded to node will be closed.
+
+Client could do a bunch of stuff with closed topics. It could remove it, or minimize it or something, for example.
+
+The main stack is meant to be messages that are new. 
+They don't refer to any messags.
+Like I said, non-tree clients will put every message on this main stack.
+
+GUI
+So, basically, I'm thinking it would be columns.
+They would have a minimum size, but split.
+What I mean is that if you only used the main stack, then it would be fully wide.
+
+When a message is branched, it would split into two columns.
+
+I'm not quite sure how to handle new message events.
+Maybe arrows or something, to show the person where the newest message is.
+Messages would have a "Read / Unread" status, that is different from "Open / Close"
+There would probably be some kind icon or something that means a "Thread" has new messages, and one for an "Open" thread.
+The two are different.
+
+An Open thread has messages that either haven't been responded to or marked as closed.
+An unread thread has messages you haven't read yet, whether they're open or not.
+
+Double clicking on a message would set you to be making a response to that message.
+
+There would have to be some kind of button for "New Message" that would put something onto the end of the main stack.
+
