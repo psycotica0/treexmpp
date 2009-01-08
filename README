@@ -9,6 +9,7 @@ Basically, each message has an ID.
 Each message can have it's subject set to "RE: ID" to signify the message it is refering to.
 
 Also, there would be a couple of messages that can be sent.
+These should be sent using IQ packets, probably of type 'set'.
 
 One would be "Close Node"
 Another would be "Open Node"
